@@ -9,7 +9,7 @@ var peopleFactory = function(age,name,state){
 	temp.state = state;
 	//creating another function
 	temp.peopleFunc = function(){
-		document.write(this.name + this.age + this.state);
+		document.write(this.name + this.age + this.state +'<br/>');
 	};
 	return temp;
 }
@@ -21,6 +21,12 @@ var person2 = peopleFactory(27,"T","CA");
 
 person1.peopleFunc();
 person2.peopleFunc();
+document.write("This is factory pattern Example"+'<br/>')
+
+
+
+
+
 
 //constructor pattern
 //the below function behaves as class
@@ -31,7 +37,7 @@ var peopleConstructor = function(name,age,state){
 	this.state = state
 	this.printPerson = function(){
 		document.write
-		(this.name + this.age + this.state);
+		(this.name + this.age + this.state + '<br/>');
 	};
 };
 //create other object from above object itself unlike returning object in factory pattern
@@ -40,7 +46,13 @@ var person1 = new peopleConstructor('john',23,'TX');
 var person2 = new peopleConstructor('kim',24,'CA');
 person1.printPerson();
 person2.printPerson();
+document.write("This is Constructor pattern example"+'<br/>')
 //The problem with this is we need to create new var for every object, if we have 100 objects we need to create 100 variables
+
+
+
+
+
 
 //prototype pattern
 //To overcome constructor pattern prototype pattern is introduced
@@ -55,12 +67,35 @@ peopleProto.prototype.name="no name";
 peopleProto.prototype.city="no City";
 
 peopleProto.prototype.printPerson = function(){
-	document.write(this.name + this.age + this.city <br/>);
+	document.write(this.name +' '+ this.age +' '+ this.city +'<br/>');
 }
 //lets create objects from the above prototype
 
 var person1 = new peopleProto();
 //we are going to assagin properties one by one after declartion
-person1.name = 'john';
+person1.name = 'Phani';
 person1.age = 23;
 person1.city = 'CA';
+document.write("Prototype example"+'<br/>')
+document.write(person1.name+' '+person1.age+' '+person1.city+'<br/>')
+document.write('name' in person1)
+document.write(person1.hasOwnProperty('name'));
+
+
+
+//dynamic Prototype Pattern
+var peopleDynamicProto = function(name,age,state){
+	this.age = age;
+	this.name= name;
+	this.state = state;
+	if(typeof this.printPerson !== 'function'){
+		peopleProto.prototype.printPerson = function(){
+			document.write(this.name +' '+ this.age +' '+ this.state +'<br/>');
+		}
+	}
+}
+var person1 = new peopleDynamicProto('john',23,'CA');
+document.write('<br/>'+' Dynamic Prototype Example'+'<br/>')
+document.write(person1.name+' '+person1.age+' '+person1.state+'<br/>')
+document.write('name' in person1);
+document.write(person1.hasOwnProperty('name'));
