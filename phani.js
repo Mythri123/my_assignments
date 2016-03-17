@@ -73,7 +73,7 @@ peopleProto.prototype.printPerson = function(){
 
 var person1 = new peopleProto();
 //we are going to assagin properties one by one after declartion
-person1.name = 'Phani';
+//person1.name = 'Phani';
 person1.age = 23;
 person1.city = 'CA';
 document.write("Prototype example"+'<br/>')
