@@ -99,3 +99,14 @@ document.write('<br/>'+' Dynamic Prototype Example'+'<br/>')
 document.write(person1.name+' '+person1.age+' '+person1.state+'<br/>')
 document.write('name' in person1);
 document.write(person1.hasOwnProperty('name'));
+
+
+console.log("Value of someThing = " + someThing);
+var someThing = "Nothing";
+//console.log(iAmWithinaFunc)
+var test = function(){
+	var toDoSomething = "Need to show Hoisting Example"
+	console.log("With in a function Value of somtThing = " +someThing);
+	var iAmWithinaFunc = "Am limited"
+}
+console.log(test())
