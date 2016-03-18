@@ -99,3 +99,17 @@ document.write('<br/>'+' Dynamic Prototype Example'+'<br/>')
 document.write(person1.name+' '+person1.age+' '+person1.state+'<br/>')
 document.write('name' in person1);
 document.write(person1.hasOwnProperty('name'));
+
+
+//Whats the differenece between global and local variables?
+//A local variable scope is limited to that particular function while global variable scope is unlimited.
+//eg.
+var globalVars = "am available through out the script";
+function loc(data){
+	var localVars = "am limited to this function";
+	return localVars;
+} loc(data);
+//live senarios
+console.log(globalVars);
+console.log(localVars+"Comment this under real senario cause this will stop the application running")
+
