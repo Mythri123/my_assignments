@@ -121,3 +121,15 @@ function loc(data){
 console.log(globalVars);
 console.log(localVars+"Comment this under real senario cause this will stop the application running")
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+function person(first, last, city) {
+    this.firstName = first;
+    this.lastName = last;
+    this.city = city;
+}
+
+var ramya = new person("Ramya", "Lingala","Frisco");
+
+document.getElementById("demo").innerHTML = ramya.firstName;
+
+
