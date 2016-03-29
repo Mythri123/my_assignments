@@ -15,8 +15,8 @@ var TryThisForProto = function(){
 }
 
 TryThisForProto.prototype.toPrintName = function(){
-	document.write("This is written in prototype function")
-	document.write(this.someName)
+	document.getElementById("demo1");
+	var someNaming = this.someName;
 }
 
 var someOtherVariableName = new TryThisForProto();
