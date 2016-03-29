@@ -15,10 +15,14 @@ var TryThisForProto = function(){
 }
 
 TryThisForProto.prototype.toPrintName = function(){
-	document.getElementById("demo1");
-	var someNaming = this.someName;
+	document.write(this.someName);
 }
 
 var someOtherVariableName = new TryThisForProto();
 
 someOtherVariableName.toPrintName();
+
+
+function calcAvgHeight(data){
+	
+}
